@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar mode="ios">
+    <ion-buttons slot="start">
+      <ion-back-button 
+      defaultHref="/"
+      text="Atrás"
+      color="primary"
+      mode="ios">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Registrar Asistencia</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="centrar">
+    <ion-button size="large">
+      <ion-icon name="qr-code"></ion-icon>
+      Generar QR
+    </ion-button>
+  </div>
+</ion-content>

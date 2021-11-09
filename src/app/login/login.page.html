@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar mode="ios">
+    <ion-buttons slot="start">
+      <ion-back-button 
+      defaultHref="/"
+      text="Atrás"
+      color="primary"
+      mode="ios">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>{{ folder }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+  
+    <strong class="capitalize">{{ folder }}</strong>
+    <div id="header">
+      <h1>Login</h1>
+      <img src="assets/logo.png"/>
+    </div>
+
+    <div class="diseno">
+      <ion-item lines="full">
+        <ion-label position="floating">Usuario</ion-label>
+        <!-- Usamos ngModel para indicarle al input el objeto a utilizar-->
+        <ion-input type="text" [(ngModel)]="user.usuario"></ion-input>
+      </ion-item>
+
+      <ion-item lines="full">
+        <!-- Usamos ngModel para indicarle al input el objeto a utilizar-->
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password" [(ngModel)]="user.password"></ion-input>
+      </ion-item>
+
+      <ion-row>
+        <ion-col>
+          <!-- Indicamos mediante el (click) la funcion a quien referenciara-->
+          <ion-button expand="full" (click)="ingresar()">
+            <ion-icon name="log-in"></ion-icon>
+            Ingresar</ion-button>
+          <div class="centrar"> 
+          <a routerLink="/recuperarpass">Recuperar Contraseña</a>
+          </div>
+        </ion-col>
+      </ion-row>
+    </div>
+
+    
+
+
+
+
+
+  
+</ion-content>

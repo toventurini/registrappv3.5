@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar mode="ios">
+    <ion-buttons slot="start">
+      <ion-back-button 
+      defaultHref="/"
+      text="Atrás"
+      color="primary"
+      mode="ios">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Asistencia</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Seleccionar Asignatura</ion-label>
+      <ion-select value="{{ selected_category_id }}" [(ngModel)]="category_id">
+        <ion-select-option
+          *ngFor="let category of categories"
+          value="{{ category.id }}"
+          >{{ category.name }}</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Profesor </ion-label>
+      <ion-input [(ngModel)]="asistenciaName"></ion-input>
+    </ion-item>
+    <div class="centrar">
+      <ion-button size="large" (click)="addAsistencia()">
+        <ion-icon name="send"></ion-icon>
+        Registrar Asistencia</ion-button>
+    </div>
+    <div class="centrar">
+      <ion-button size="large">
+        <ion-icon name="camera"></ion-icon>
+        Escanear QR
+      </ion-button>
+    </div>
+  </ion-list>
+
+  <ion-list>
+    <ion-item-sliding *ngFor="let asistencia of asistencias">
+      <ion-item-options side="start">
+        <ion-item-option (click)="editAsistencia(asistencia)">Edit</ion-item-option>
+      </ion-item-options>
+
+      <ion-item>
+        <ion-label>{{ asistencia.asistencia }}</ion-label>
+        <ion-badge color="primary">{{ asistencia.category }}</ion-badge>
+      </ion-item>
+
+      <ion-item-options side="end">
+        <ion-item-option color="danger" (click)="deleteAsistencia(asistencia.id)"
+          >Delete</ion-item-option
+        >
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

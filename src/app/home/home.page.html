@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar mode="ios">
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>{{ folder }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <gl-background-video src="assets/video/pex1.mp4"></gl-background-video>
+
+
+  <div id="container">
+
+    <div class="pagina-centrada">
+  
+      <div class="contenido">
+        <h1>¡Bienvenido a Duoc UC!</h1>
+  
+        <div class="botoncontenedor">
+          <ion-button routerLink="/login" shape="round">
+            <ion-icon name="log-in"></ion-icon>
+            Ingresar</ion-button>
+        </div>
+      
+  
+      </div>
+  
+    </div>
+  </div>
+</ion-content>
