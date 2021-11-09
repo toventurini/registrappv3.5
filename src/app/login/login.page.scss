@@ -2,13 +2,14 @@
     text-align: center;
     align-items: center;
     justify-content: center;
-    margin-top: 20px;
+    padding-top: 20px;
 }
 
 
 
 ion-toolbar {
     --background: #082c54;
+    color: white;
 
     ion-button {
         text-transform: initial;

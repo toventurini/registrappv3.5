@@ -1,19 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-
 import { IonicModule } from '@ionic/angular';
-
-import { GenerarqrPageRoutingModule } from './generarqr-routing.module';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 import { GenerarqrPage } from './generarqr.page';
+import { NgxQRCodeModule } from '@techiediaries/ngx-qrcode'; //Se importa creador QR
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    GenerarqrPageRoutingModule
+    RouterModule.forChild([
+      {path: '',
+      component: GenerarqrPage}
+    ]),
+    NgxQRCodeModule, // QR
   ],
   declarations: [GenerarqrPage]
 })

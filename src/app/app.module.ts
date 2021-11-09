@@ -10,15 +10,23 @@ import { AppComponent } from "./app.component";
 import { AppRoutingModule } from "./app-routing.module";
 import { SQLite } from "@ionic-native/sqlite/ngx";
 
+import { NgxQRCodeModule } from '@techiediaries/ngx-qrcode'; //QR
+
+import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';//escaneo
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [
+    BrowserModule, 
+    IonicModule.forRoot(), 
+    AppRoutingModule,
+    NgxQRCodeModule ],
   providers: [
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    SQLite,
+    SQLite, BarcodeScanner,
   ],
   bootstrap: [AppComponent],
 })

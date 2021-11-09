@@ -42,7 +42,7 @@ export class AsistenciaPage implements OnInit {
   //añadir asistencia
   addAsistencia() {
     if (!this.asistenciaName.length) {
-      alert("Ingresar nombre asistencia");
+      alert("Por favor ingrese la fecha");
       return;
     }
 

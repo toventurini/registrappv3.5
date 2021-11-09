@@ -6,3 +6,25 @@ ion-toolbar {
   --background: #082c54;
   color: white;
 }
+
+.centrar{
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+
+.diseno {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+ion-button{
+  margin-top: 40px;
+}
+
+
+ion-icon{
+  padding-right: 5px;
+}

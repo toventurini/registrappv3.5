@@ -1,9 +1,42 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar mode="ios">
+    <ion-buttons slot="start">
+      <ion-back-button 
+      defaultHref="/"
+      text="Atrás"
+      color="primary"
+      mode="ios">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
     <ion-title>Recuperar Contraseña</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+
+
+  <div class="centrar diseno">
+    <ion-item lines="full">
+      <ion-label position="floating">Usuario</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Nueva contraseña</ion-label>
+      <ion-input type="password"></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Confirmar contraseña</ion-label>
+      <ion-input type="password"></ion-input>
+    </ion-item>
+
+    <ion-button size="large">
+      <ion-icon name="document-lock"></ion-icon>
+      Cambiar contraseña
+    </ion-button>
+  </div>
+
 
 </ion-content>

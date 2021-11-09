@@ -16,10 +16,30 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+
   <div class="centrar">
-    <ion-button size="large">
+    <ion-input type="text" placeholder="My QR data" [(ngModel)]="qrData">
+    </ion-input>
+    <ion-button size="large" (click)="createCode()" >
       <ion-icon name="qr-code"></ion-icon>
       Generar QR
     </ion-button>
+
+    <ion-card *ngIf="createdCode">
+      <ngx-qrcode [value]="createdCode"></ngx-qrcode>
+     
+
+      <ion-card-content>
+          Value: {{ createdCode }}  <!-- home.page.ts-->
+      </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="scannedCode">
+      <ion-card-content>
+          Result from scan: {{ scannedCode }} <!-- home.page.ts-->
+      </ion-card-content>
+  </ion-card>
+  
   </div>
+
 </ion-content>
