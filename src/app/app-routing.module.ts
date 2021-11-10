@@ -44,6 +44,14 @@ const routes: Routes = [
     path: 'recuperarpass',
     loadChildren: () => import('./recuperarpass/recuperarpass.module').then( m => m.RecuperarpassPageModule)
   },
+  {
+    path: 'listausuarios',
+    loadChildren: () => import('./listausuarios/listausuarios.module').then( m => m.ListausuariosPageModule)
+  },
+  {
+    path: 'perfil/:id',
+    loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule)
+  },
   
 
 ];

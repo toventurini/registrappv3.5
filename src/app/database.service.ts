@@ -27,7 +27,7 @@ export class DatabaseService {
         this.databaseObj = db;
       })
       .catch((e) => {
-        alert("error on creating database " + JSON.stringify(e));
+        alert("No se pudo crear la base de datos" + JSON.stringify(e));
       });
 
     await this.createTables();
@@ -58,14 +58,14 @@ export class DatabaseService {
         []
       )
       .then(() => {
-        return "category created";
+        return "Categoría creada";
       })
       .catch((e) => {
         if (e.code === 6) {
-          return "category already exists";
+          return "La categoría ya existe";
         }
 
-        return "error on creating category " + JSON.stringify(e);
+        return "No se pudo crear la categoría" + JSON.stringify(e);
       });
   }
 
@@ -79,7 +79,7 @@ export class DatabaseService {
         return res;
       })
       .catch((e) => {
-        return "error on getting categories " + JSON.stringify(e);
+        return "No se pudo obtener las categorías" + JSON.stringify(e);
       });
   }
 
@@ -87,10 +87,10 @@ export class DatabaseService {
     return this.databaseObj
       .executeSql(`DELETE FROM ${this.tables.categories} WHERE id = ${id}`, [])
       .then(() => {
-        return "category deleted";
+        return "Categoría eliminada";
       })
       .catch((e) => {
-        return "error on deleting category " + JSON.stringify(e);
+        return "No se pudo borrar la categoría " + JSON.stringify(e);
       });
   }
 
@@ -101,14 +101,14 @@ export class DatabaseService {
         []
       )
       .then(() => {
-        return "category updated";
+        return "Categoría actualizada";
       })
       .catch((e) => {
         if (e.code === 6) {
-          return "category already exist";
+          return "La categoría ya existe";
         }
 
-        return "error on updating category " + JSON.stringify(e);
+        return "No se pudo actualizar la categoría" + JSON.stringify(e);
       });
   }
 

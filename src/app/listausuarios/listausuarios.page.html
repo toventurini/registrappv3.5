@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar mode="ios">
+    <ion-buttons slot="start">
+      <ion-back-button 
+      defaultHref="/"
+      text="Atrás"
+      color="primary"
+      mode="ios">
+      </ion-back-button>
+
+      
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Estudiantes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list style="margin-top: 20px;">
+    <!-- arreglo que recorre a los personajes uno por uno -->
+    <ion-item *ngFor="let character of characters" [routerLink]="['/perfil/' + character.id]">
+      <ion-avatar slot="start"> 
+        <img src="{{character.image}}" alt="">
+      </ion-avatar>
+      <ion-label>{{character.name}}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

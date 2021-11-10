@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar mode="ios">
+    <ion-buttons slot="start">
+      <ion-back-button 
+      defaultHref="/"
+      text="Atrás"
+      color="primary"
+      mode="ios">
+      </ion-back-button>
+
+      
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Perfil de Estudiante</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-text-center">
+  <div *ngIf="character">
+    <ion-card>
+      <ion-card-content>
+        <img src="{{character.image}}" alt="">
+        <ion-card-title>
+          {{character.name}}
+        </ion-card-title>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

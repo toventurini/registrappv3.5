@@ -23,8 +23,14 @@ export class AppComponent implements OnInit {
     {
       title: "Ingresar",
       url: "/login",
+      icon: "arrow-forward",
+    },
+
+    {
+      title: "Estudiantes (API)",
+      url: "/listausuarios",
       icon: "person",
-    }
+    },
 
    
 

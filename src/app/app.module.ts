@@ -14,6 +14,8 @@ import { NgxQRCodeModule } from '@techiediaries/ngx-qrcode'; //QR
 
 import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';//escaneo
 
+import { HttpClientModule } from "@angular/common/http";
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -21,7 +23,8 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';//escaneo
     BrowserModule, 
     IonicModule.forRoot(), 
     AppRoutingModule,
-    NgxQRCodeModule ],
+    NgxQRCodeModule,
+    HttpClientModule],
   providers: [
     StatusBar,
     SplashScreen,
