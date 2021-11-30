@@ -38,12 +38,19 @@
         <ion-icon name="send"></ion-icon>
         Registrar Asistencia</ion-button>
     </div>
+
     <div class="centrar">
-      <ion-button size="large">
+      <ion-button (click)="clickImg()"><!-- Botón de camara-->
         <ion-icon name="camera"></ion-icon>
         Escanear QR
       </ion-button>
     </div>
+
+    <div class="centrar"> <!-- Captutar foto-->
+    <img [src]="image" />
+   </div>
+
+
   </ion-list>
 
   <ion-list>

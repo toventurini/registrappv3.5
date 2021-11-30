@@ -15,6 +15,10 @@ import { NgxQRCodeModule } from '@techiediaries/ngx-qrcode'; //QR
 import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';//escaneo
 
 import { HttpClientModule } from "@angular/common/http";
+import { Geolocation } from '@ionic-native/Geolocation/ngx';
+
+// Camara
+import { Camera } from '@ionic-native/camera/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -29,7 +33,7 @@ import { HttpClientModule } from "@angular/common/http";
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    SQLite, BarcodeScanner,
+    SQLite, BarcodeScanner, Geolocation, Camera,  //CAMARA
   ],
   bootstrap: [AppComponent],
 })

@@ -32,6 +32,12 @@ export class AppComponent implements OnInit {
       icon: "person",
     },
 
+    {
+      title: "Geolocalización",
+      url: "/geolocalizacion",
+      icon: "globe",
+    },
+
    
 
 

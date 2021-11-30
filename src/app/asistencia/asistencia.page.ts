@@ -1,12 +1,25 @@
 import { Component, OnInit } from "@angular/core";
 import { DatabaseService } from "../database.service";
 
+//CAMARA
+import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+
 @Component({
   selector: 'app-asistencia',
   templateUrl: './asistencia.page.html',
   styleUrls: ['./asistencia.page.scss'],
 })
 export class AsistenciaPage implements OnInit {
+
+  //CAMARA
+  image: string;
+
+  cameraOptions: CameraOptions = {
+    quality: 35,
+    destinationType: this.camera.DestinationType.DATA_URL,
+    encodingType: this.camera.EncodingType.JPEG,
+    mediaType: this.camera.MediaType.PICTURE
+  }
 
   //propiedades de asignatura(categoria)
   asistenciaName: string = "";
@@ -19,10 +32,22 @@ export class AsistenciaPage implements OnInit {
   selected_category_id: number = 0;
   editId: number = 0;
 
-  //Se llaman datos de:
-  constructor(public database: DatabaseService) { 
+  //Se llaman datos de: CONSTRUCTOR
+
+  constructor(private camera: Camera, public database: DatabaseService) { 
     this.getCategories();
     this.getAsistencias();
+  }
+
+
+  //CAMARA
+  clickImg() {
+    this.camera.getPicture(this.cameraOptions).then((res) => {
+      let base64 = 'data:image/jpeg;base64,' + res;
+      this.image = base64;
+    }, (error) => {
+      alert(error);
+    });
   }
 
   ngOnInit() {}
